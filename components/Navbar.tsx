@@ -113,8 +113,8 @@ export default function Navbar() {
                 </a>
                 <div className="flex flex-col">
                   <span className="text-[10px] text-gray-400 font-bold tracking-wide leading-none">Call Us Now</span>
-                  <a href="tel:+919876543210" className="text-[13px] font-black text-[#D61C22] tracking-normal mt-1 whitespace-nowrap">
-                    +91 98765 43210
+                  <a href="tel:+917351626329" className="text-[13px] font-black text-[#D61C22] tracking-normal mt-1 whitespace-nowrap">
+                    +91 7351626329
                   </a>
                 </div>
               </div>

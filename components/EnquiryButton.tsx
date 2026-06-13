@@ -8,7 +8,7 @@ export default function EnquiryButton() {
   const [open, setOpen] = useState(false);
 
   // Aapki details (Yahan apna real number daal dena bhai)
-  const phoneNumber = "+919999999999"; 
+  const phoneNumber = "+917351626329"; 
   const whatsappMessage = "Hello! I am interested in joining your courses. Please provide more details.";
 
   return (

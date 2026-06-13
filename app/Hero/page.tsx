@@ -85,15 +85,14 @@ export default function HeroSection() {
             </h1>
 
             <p className="mt-6 text-slate-600 text-lg leading-relaxed max-w-xl">
-              Join AIEL Institute and transform your future through English Speaking, 
-              Computer Courses and Modern Coding Programs.
+             Join <span className='text-[#D61C22]'>AIEL Institute</span> and unlock your potential with English Speaking, Computer Courses, and Modern Coding Programs. Claim your Lifetime Free English Speaking Membership Card and enjoy its benefits across India. Start your journey to success today.
             </p>
 
             {/* BUTTONS WITH HOVER ANIMATIONS */}
             <div className="mt-8 flex gap-4 flex-wrap">
               {/* CALLING BUTTON (Pulsing Animation) */}
               <motion.a 
-                href="tel:+919876543210"
+                href="tel:+917351626329"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-7 py-4 bg-violet-600 text-white rounded-xl font-semibold shadow-lg shadow-violet-600/30 flex items-center gap-3 relative overflow-hidden group"

@@ -34,7 +34,7 @@ export default function AboutUs() {
           </h1>
 
           <p className="text-slate-500 text-base md:text-xl max-w-3xl mx-auto font-normal leading-relaxed">
-            We are a comprehensive institute dedicated to bridging the gap between absolute beginners and industry professionals. From fundamental applications and professional corporate accounting to advanced software engineering and English corporate communication—we program careers for success.
+            We are a comprehensive institute dedicated to bridging the gap between absolute beginners and industry professionals. From fundamental applications and professional corporate accounting to advanced Computer Applications and English corporate communication—we program careers for success.
           </p>
         </div>
       </section>

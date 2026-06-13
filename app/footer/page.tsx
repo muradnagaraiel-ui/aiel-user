@@ -164,21 +164,21 @@ export default function Footer() {
                 />
               </Link>
               <p className="text-slate-300 text-sm leading-relaxed font-medium">
-                Empowering students with industry-standard technical skills. Join AIEL for a brighter career in IT, Coding, and Management.
+                Master English Communication, Computer Skills, and Modern Coding through practical, career-focused training designed for your success.
               </p>
               
               {/* Dynamic Redirect Channels */}
               <div className="flex items-center gap-4 pt-2">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#1877F2] text-white transition-all duration-300 hover:-translate-y-1 shadow-md" title="Facebook">
+                <a href="https://www.facebook.com/share/1H354ufGWC/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#1877F2] text-white transition-all duration-300 hover:-translate-y-1 shadow-md" title="Facebook">
                   <FacebookIcon />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white transition-all duration-300 hover:-translate-y-1 shadow-md" title="Instagram">
+                <a href="https://www.instagram.com/aielmuradnagar/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white transition-all duration-300 hover:-translate-y-1 shadow-md" title="Instagram">
                   <InstagramIcon />
                 </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FF0000] text-white transition-all duration-300 hover:-translate-y-1 shadow-md" title="YouTube">
+                <a href="https://www.youtube.com/@americaninstituteofenglish1159" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#FF0000] text-white transition-all duration-300 hover:-translate-y-1 shadow-md" title="YouTube">
                   <YoutubeIcon />
                 </a>
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#25D366] text-white transition-all duration-300 hover:-translate-y-1 shadow-md" title="WhatsApp">
+                <a href="https://wa.me/917351626329" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#25D366] text-white transition-all duration-300 hover:-translate-y-1 shadow-md" title="WhatsApp">
                   <Globe size={18} />
                 </a>
               </div>
@@ -235,7 +235,7 @@ export default function Footer() {
                     <MapPin size={18} />
                   </div>
                   <p className="text-sm text-slate-300 font-medium leading-relaxed">
-                    123, Skill Plaza, Near Central Metro Station, New Delhi, 110001
+                    Near Vansh Electrtonics, 2nd Floor,Railway Road Muradnagar, Ghaziabad, Uttar Pradesh 201206
                   </p>
                 </div>
 
@@ -244,21 +244,25 @@ export default function Footer() {
                     <Phone size={18} />
                   </div>
                   <div className="flex flex-col">
-                    <a href="tel:+919876543210" className="text-sm font-bold hover:text-[#D61C22] transition-colors">
-                      +91 98765 43210
+                    <a href="tel:+917351626329" className="text-sm font-bold hover:text-[#D61C22] transition-colors">
+                      +91 73516 26329
+                    </a>
+                    
+                    <a href="tel:+919837120713" className="text-sm font-bold hover:text-[#D61C22] transition-colors">
+                      +91 98371 20713
                     </a>
                     <span className="text-[9px] text-slate-400 uppercase tracking-widest font-black mt-0.5">
-                      Mon - Sat (09:00 AM - 07:00 PM)
+                      Mon - Sat (08:00 AM - 08:00 PM)
                     </span>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10 text-[#D61C22]">
+                  <div className="w-10 h-10  rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10 text-[#D61C22]">
                     <Mail size={18} />
                   </div>
-                  <a href="mailto:info@aiel.com" className="text-sm font-semibold hover:text-[#D61C22] transition-colors break-all">
-                    info@aiel.com
+                  <a href="mailto:muradnagaraiel@gmail.com" className="text-sm mt-2 font-semibold hover:text-[#D61C22] transition-colors break-all">
+                    muradnagaraiel@gmail.com
                   </a>
                 </div>
               </div>
@@ -269,7 +273,7 @@ export default function Footer() {
           {/* ─── BOTTOM LEGAL ATTRIBUTION BAR ─── */}
           <div className="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-slate-400 text-xs font-medium">
-              © {currentYear} <span className="text-white font-bold">AIEL Institute</span>. All rights reserved.
+              © {currentYear} <span className="text-white font-bold">AIEL Institute of English Language Pvt. Ltd. <span className='text-[#D61C22]'>(Vocational Training Center)</span></span>. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest flex items-center gap-2 select-none">
