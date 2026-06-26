@@ -28,25 +28,24 @@ export default function TestimonialsPage() {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
 
   // 1. Fetch Active Testimonials
-// 1. Fetch Active Testimonials
-useEffect(() => {
-  async function fetchTestimonials() {
-    try {
-      const res = await fetch('/api/testimonial/get');
-      const result = await res.json(); // Result ab { success, data: [] } hai
+  useEffect(() => {
+    async function fetchTestimonials() {
+      try {
+        const res = await fetch('/api/testimonial/get');
+        const result = await res.json(); // Result ab { success, data: [] } hai
 
-      if (res.ok && result.success) {
-        // Backend se filtered data hi aa raha hai, isliye seedha set karenge
-        setTestimonials(result.data); 
+        if (res.ok && result.success) {
+          // Backend se filtered data hi aa raha hai, isliye seedha set karenge
+          setTestimonials(result.data); 
+        }
+      } catch (error) {
+        console.error('Error fetching testimonials:', error);
+      } finally {
+        setLoading(false);
       }
-    } catch (err) {
-      console.error('Error fetching testimonials:', err);
-    } finally {
-      setLoading(false);
     }
-  }
-  fetchTestimonials();
-}, []);
+    fetchTestimonials();
+  }, []);
 
   // Handle Image Selection
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {

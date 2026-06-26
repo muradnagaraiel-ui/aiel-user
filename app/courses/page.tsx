@@ -53,8 +53,8 @@ export default function UserCoursesPage() {
       if (data.success) {
         setCourses(data.data);
       }
-    } catch (err) {
-      console.error("Error pulling course collections:", err);
+    } catch (error) {
+      console.error("Error pulling course collections:", error);
     } finally {
       setLoading(false);
     }

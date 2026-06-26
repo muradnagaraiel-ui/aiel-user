@@ -27,7 +27,7 @@ export default function EnquiryModal({ open, onClose, prefill }: Props) {
     fatherName: '',
     mobileNumber: '',
     whatsappNumber: '',
-    enquiryDate: new Date().toISOString().split('T')[0], // Default today's date
+    dob: '', // ─── DOB NEW STATE ADDED ───
     gender: '',
     qualification: '',
     courseType: '',
@@ -72,8 +72,8 @@ export default function EnquiryModal({ open, onClose, prefill }: Props) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Core Field validation
-    if (!formData.studentName || !formData.mobileNumber || !formData.courseName) {
+    // Core Field validation (DOB validation check lagaya hai)
+    if (!formData.studentName || !formData.mobileNumber || !formData.courseName || !formData.dob) {
       showToast('Please fill all required fields.', 'error');
       return;
     }
@@ -81,10 +81,27 @@ export default function EnquiryModal({ open, onClose, prefill }: Props) {
     try {
       setLoading(true);
 
+      // ─── PAYLOAD MAPPER FOR DATABASE COMPATIBILITY ───
+      const apiPayload = {
+        studentName: formData.studentName,
+        fatherName: formData.fatherName,
+        mobile: formData.mobileNumber,        // Schema matches 'mobile'
+        whatsapp: formData.whatsappNumber,    // Schema matches 'whatsapp'
+        dob: formData.dob,                    // Mongoose directly parses YYYY-MM-DD
+        gender: formData.gender || undefined, 
+        qualification: formData.qualification,
+        courseType: formData.courseType,
+        course: formData.courseName,          // Schema matches 'course'
+        address: formData.address,
+        query: formData.query,
+        whyDoYouWantThis: formData.reason,    // Schema matches 'whyDoYouWantThis'
+        status: 'Pending'                     // Standard Default state alignment
+      };
+
       const res = await fetch('/api/enquiry/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(apiPayload), // Schema matched payload goes to backend
       });
 
       const data = await res.json();
@@ -92,13 +109,13 @@ export default function EnquiryModal({ open, onClose, prefill }: Props) {
       if (data.success) {
         showToast('Enquiry Submitted Successfully! 🚀', 'success');
         
-        // Reset Form States
+        // Reset Form States cleanly
         setFormData({
           studentName: '',
           fatherName: '',
           mobileNumber: '',
           whatsappNumber: '',
-          enquiryDate: new Date().toISOString().split('T')[0],
+          dob: '',
           gender: '',
           qualification: '',
           courseType: '',
@@ -115,8 +132,8 @@ export default function EnquiryModal({ open, onClose, prefill }: Props) {
       } else {
         showToast(data.message || 'Submission failed.', 'error');
       }
-    } catch (err) {
-      console.error('Submission pipeline error:', err);
+    } catch (error) {
+      console.error('Submission pipeline error:', error);
       showToast('Server error. Please try again later.', 'error');
     } finally {
       setLoading(false);
@@ -229,14 +246,16 @@ export default function EnquiryModal({ open, onClose, prefill }: Props) {
               />
             </div>
 
+            {/* ─── NEW DOB INPUT MATRIX SELECTION ─── */}
             <div>
-              <label className="text-xs font-bold text-slate-500 block mb-1">Enquiry Date</label>
+              <label className="text-xs font-bold text-slate-500 block mb-1">Date of Birth <span className="text-red-500">*</span></label>
               <input
                 type="date"
-                name="enquiryDate"
-                value={formData.enquiryDate}
+                name="dob"
+                value={formData.dob}
                 onChange={handleChange}
-                className="w-full bg-slate-50 border border-slate-200 focus:border-violet-500 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-violet-500 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all [color-scheme:light]"
+                required
               />
             </div>
 
@@ -277,7 +296,7 @@ export default function EnquiryModal({ open, onClose, prefill }: Props) {
                 name="courseType"
                 value={formData.courseType}
                 onChange={handleChange}
-                disabled={!!prefill} // Locked status indicator
+                disabled={!!prefill}
                 className="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 text-slate-700 text-sm outline-none disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 <option value="">Course Type</option>
@@ -294,7 +313,7 @@ export default function EnquiryModal({ open, onClose, prefill }: Props) {
                 name="courseName"
                 value={formData.courseName}
                 onChange={handleChange}
-                readOnly={!!prefill} // Dynamic lock status assignment
+                readOnly={!!prefill}
                 placeholder="Ex: Python Fullstack Pro"
                 className="w-full bg-slate-50 read-only:bg-slate-100 border border-slate-200 focus:border-violet-500 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm font-semibold outline-none transition-all read-only:cursor-not-allowed"
                 required
